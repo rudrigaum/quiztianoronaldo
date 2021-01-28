@@ -9,6 +9,9 @@ import QuizLogo from '../src/components/QuizLogo'
 import QuizBackgrond from '../src/components/QuizBackground';
 import GitHubCorner from '../src/components/GitHubCorner';
 import Footer from '../src/components/Footer';
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
+import QuizContainer from '../src/components/QuizContainer';
 
 // const BackgroundImage = styled.div`
 //   background-image:url(${db.bg});
@@ -49,16 +52,13 @@ export default function Home() {
             }}
             >
               <Input 
-                onChange={function(infosDoEvento) {
-                      // console.log(infosDoEvento.target.value);
-                      // infosDoEvento.target.value;
-                      setName(infosDoEvento.target.value);
-                    }}
-                      placeholder="Diz ai seu nome"
+                  name="nomeDoUsuario"
+                  onChange={(infosDoEvento) => setName(infosDoEvento.target.value)}
+                  placeholder="Diz ai seu nome"
+                  value={name}
                        />
               <button type="submit" disabled={name.length === 0}>
-                Jogar
-                 {name}
+                {`Jogar ${name}`}
               </button>
             </form>
           </Widget.Content>
